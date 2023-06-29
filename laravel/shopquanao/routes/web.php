@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+#USER
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/trang-chu', [HomeController::class, 'index']);
+
+#ADMIN
+
+Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('/logout', [AdminController::class, 'logout']);
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'show_dashboard']);
+
+Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
+
+
+
