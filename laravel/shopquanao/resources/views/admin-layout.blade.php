@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>ADMIN - DASHBOARD</title>
+    <title>ADMIN - ZaraShop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords"
@@ -37,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">
-                    VISITORS
+                <a href="{{URL::to('/admin/dashboard')}}" class="logo">
+                    ZaraShop
                 </a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="index.html">
+                            <a class="active" href="{{URL::to('/admin/dashboard')}}">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -96,8 +96,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Danh mục sản phẩm</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="glyphicon.html">Danh mục</a></li>
-                                <li><a href="grids.html">Thêm danh mục</a></li>
+                                <li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Thương hiệu sản phẩm</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{URL::to('/add-brand-product')}}">Thêm thương hiệu sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all-brand-product')}}">Liệt kê thương hiệu sản phẩm</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Sản phẩm</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
+                                <li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
                             </ul>
                         </li>
 
@@ -110,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                @yield('dashboard')
+                @yield('admin-content')
             </section>
             <!-- footer -->
             <div class="footer">
